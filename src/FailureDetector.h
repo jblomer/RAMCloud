@@ -50,7 +50,7 @@ class FailureDetector {
 
   PRIVATE:
     /// Number of microseconds between probes.
-    static const int PROBE_INTERVAL_USECS = 100 * 1000;
+    static const int PROBE_INTERVAL_USECS = 2000 * 1000;
 
     /**
      * Number of microseconds before a probe is considered to have timed out.
@@ -60,7 +60,7 @@ class FailureDetector {
      * up becoming a bottleneck we may need to increase this timeout and move to
      * an asynchronous model.
      */
-    static const int TIMEOUT_USECS = 50 * 1000;
+    static const int TIMEOUT_USECS = 1000 * 1000;
 
     static_assert(TIMEOUT_USECS <= PROBE_INTERVAL_USECS,
                   "Timeout us should be less than probe interval.");
